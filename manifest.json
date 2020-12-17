@@ -1,0 +1,13 @@
+{
+  "name": "Dayly adder",
+  "short_name": "Dayly",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#09031f",
+  "description": "A simple todo list.",
+  "icons": [{
+    "src": "favicon.ico",
+    "sizes": "16x16",
+    "type": "image/ico"
+  }]
+}
