@@ -4,7 +4,7 @@ body{
   margin: auto;
   font-family: "Lucida Console", Courier, monospace;
 }
-.ultra{
+.ultra, .infra{
   text-align: center;
   padding: 0px;
   margin: auto;
@@ -28,7 +28,11 @@ button:hover{
   background-color: white;
   color: #09031f;
 }
-input:hover{
+input:focus, imput:hover{
   background-color: white;
   color: #09031f;
+}
+#da{
+  display: none;
+  margin: 1% auto;
 }

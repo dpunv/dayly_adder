@@ -9,14 +9,18 @@
 </head>
 <body>
     <div class="ultra">
-        <h1>open editors</h1>
-        <div class="infra">
+        <h1>dayly adder</h1>
+        <div class="infra" id="add">
             <input type="text" name="tx" id="text">
-            <button onclick="add()">Add</button>
+            <button onclick="add()" id="ab">Add</button>
+        </div>
+        <div class="infra" id="del">
+            <button onclick="da()" id="da">delete all</button>
+            <button onclick="delact()" id="delact">delete</button>
         </div>
         <div id="ml"></div>
-        <button onclick="da()" id="da">cancella tutto</button>
-        <script src="script.js"></script>
     </div>
+    <script src="script.js"></script>
+
 </body>
 </html>
