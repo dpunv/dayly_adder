@@ -1,4 +1,9 @@
+//author: dp
+
+//global variable to store the deleting state
 var del=0;
+
+//function to display the stored items in localStorage
 function st(){
     if(typeof(Storage) !== "undefined") {
         var key;
@@ -7,18 +12,13 @@ function st(){
             if (!localStorage.hasOwnProperty(key)) continue;
             s = s + "<p class=\"content\" onclick=\"dt('" + key + "')\">" + key + "<br>" + localStorage.getItem(key) +"</p>";
         }
-        /*
-        if(s == ""){
-            localStorage.setItem("0", "hello world");
-            s = s + "<button onclick=\"dt(0)\">" + localStorage.getItem("0") +"</button>";
-        }
-        */
         document.getElementById("ml").innerHTML = s;
     } else {
         document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
     }
 }
 
+//function to add a new item in localStorage
 function add(){
     var text = document.getElementById("text").value;
     var name = document.getElementById("name").value;
@@ -26,6 +26,7 @@ function add(){
     st()
 }
 
+//function to delete an item from localstorage
 function dt(key){
     if(del == 1){
         localStorage.removeItem(key);
@@ -33,6 +34,7 @@ function dt(key){
     }
 }
 
+//function to delete all items from localstorage
 function da(){
     /*for(let key in localStorage){
         if(!localStorage.hasOwnProperty(key))continue;
@@ -42,6 +44,7 @@ function da(){
     st()
 }
 
+//function to change the state from add to delete and from delete to add
 function delact(){
     if(del == 0){
         del = 1;
@@ -57,19 +60,10 @@ function delact(){
     }
 }
 
+//function to print the json object of localstorage
 function exp(){
     document.getElementById("exp").innerHTML = JSON.stringify(localStorage);
 }
 
+//load the window
 window.onload = st;
-/*
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js').then( (registration) => {
-            console.log('scope: ', registration.scope);
-        }, (e) => {
-            console.log('error: ', e);
-        });
-    });
-}
-*/
