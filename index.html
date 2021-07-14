@@ -11,13 +11,16 @@
     <div class="ultra">
         <h1>dayly adder</h1>
         <div class="infra" id="add">
-            <input type="text" name="tx" id="text">
+            <input type="text" name="nm" id="name" placeholder="class">
+            <input type="text" name="tx" id="text" placeholder="content">
             <button onclick="add()" id="ab">Add</button>
+            <button onclick="exp()">export</button>
         </div>
         <div class="infra" id="del">
             <button onclick="da()" id="da">delete all</button>
             <button onclick="delact()" id="delact">delete</button>
         </div>
+        <p id="exp"></p>
         <div id="ml"></div>
     </div>
     <script src="script.js"></script>

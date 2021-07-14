@@ -4,14 +4,13 @@ body{
   margin: auto;
   font-family: "Lucida Console", Courier, monospace;
 }
-.ultra, .infra{
+.ultra, .infra, #ml, .content{
   text-align: center;
   padding: 0px;
   margin: auto;
   border: 0px;
 }
-
-button, input{
+button, input, #exp, .content{
   background-color: #09031f;
   border: 1px dotted white;
   color: white;
@@ -21,18 +20,30 @@ button, input{
   margin: 1%;
   border-radius: 3px;
 }
-button, input{
+button, input, p{
   transition-duration: 0.4s;
 }
-button:hover{
-  background-color: white;
-  color: #09031f;
-}
-input:focus, imput:hover{
+
+button:hover, input:focus, imput:hover, .content:hover{
   background-color: white;
   color: #09031f;
 }
 #da{
   display: none;
   margin: 1% auto;
+}
+#exp{
+  border: 0px;
+  margin:auto;
+}
+#ml{
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+}
+.content{
+  margin: 2% auto;
+  padding: 1%;
 }

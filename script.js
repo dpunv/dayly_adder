@@ -5,7 +5,7 @@ function st(){
         var s="";
         for (let key in localStorage){
             if (!localStorage.hasOwnProperty(key)) continue;
-            s = s + "<button onclick=\"dt('" + key + "')\">" + localStorage.getItem(key) +"</button>";
+            s = s + "<p class=\"content\" onclick=\"dt('" + key + "')\">" + key + "<br>" + localStorage.getItem(key) +"</p>";
         }
         /*
         if(s == ""){
@@ -21,7 +21,8 @@ function st(){
 
 function add(){
     var text = document.getElementById("text").value;
-    localStorage.setItem(text, text);
+    var name = document.getElementById("name").value;
+    localStorage.setItem(text, name);
     st()
 }
 
@@ -33,10 +34,11 @@ function dt(key){
 }
 
 function da(){
-    for(let key in localStorage){
+    /*for(let key in localStorage){
         if(!localStorage.hasOwnProperty(key))continue;
         localStorage.removeItem(key);
-    }
+    }*/
+    localStorage.clear()
     st()
 }
 
@@ -53,6 +55,10 @@ function delact(){
         document.getElementById("da").style.display = "none";
         document.getElementById("add").style.display = "block";
     }
+}
+
+function exp(){
+    document.getElementById("exp").innerHTML = JSON.stringify(localStorage);
 }
 
 window.onload = st;
