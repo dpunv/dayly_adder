@@ -24,7 +24,7 @@ button, input, textarea, p, .content{
   transition-duration: 0.4s;
 }
 
-button:hover, input:focus, imput:hover, .content:hover, textarea:focus, textarea:hover{
+button:hover, input:focus, input:hover, .content:hover, textarea:focus, textarea:hover{
   background-color: white;
   color: #09031f;
 }
