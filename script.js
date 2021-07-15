@@ -3,6 +3,7 @@
 //global variable to store the deleting state
 var del=0;
 
+
 //function to display the stored items in localStorage
 function st(){
     if(typeof(Storage) !== "undefined") {
@@ -10,7 +11,8 @@ function st(){
         var s="";
         for (let key in localStorage){
             if (!localStorage.hasOwnProperty(key)) continue;
-            s = s + "<p class=\"content\" onclick=\"dt('" + key + "')\">" + key + "<br>" + localStorage.getItem(key) +"</p>";
+            s = s + "<p class=\"content\" onclick=\"dt('" + key + "')\">" + key + localStorage.getItem(key) +"</p>";
+            console.log(s)
         }
         document.getElementById("ml").innerHTML = s;
     } else {
@@ -22,7 +24,7 @@ function st(){
 function add(){
     var text = document.getElementById("text").value;
     var name = document.getElementById("name").value;
-    localStorage.setItem(text, name);
+    localStorage.setItem(text.split("\n").join("<br />") + "<br />", name);
     st()
 }
 
@@ -36,10 +38,6 @@ function dt(key){
 
 //function to delete all items from localstorage
 function da(){
-    /*for(let key in localStorage){
-        if(!localStorage.hasOwnProperty(key))continue;
-        localStorage.removeItem(key);
-    }*/
     localStorage.clear()
     st()
 }
@@ -56,7 +54,7 @@ function delact(){
         del = 0
         document.getElementById("delact").innerHTML = "delete";
         document.getElementById("da").style.display = "none";
-        document.getElementById("add").style.display = "block";
+        document.getElementById("add").style.display = "flex";
     }
 }
 

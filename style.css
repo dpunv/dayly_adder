@@ -10,7 +10,7 @@ body{
   margin: auto;
   border: 0px;
 }
-button, input, #exp, .content{
+button, input, textarea, #exp, .content{
   background-color: #09031f;
   border: 1px dotted white;
   color: white;
@@ -20,11 +20,11 @@ button, input, #exp, .content{
   margin: 1%;
   border-radius: 3px;
 }
-button, input, p{
+button, input, textarea, p{
   transition-duration: 0.4s;
 }
 
-button:hover, input:focus, imput:hover, .content:hover{
+button:hover, input:focus, imput:hover, .content:hover, textarea:focus, textarea:hover{
   background-color: white;
   color: #09031f;
 }
@@ -36,14 +36,14 @@ button:hover, input:focus, imput:hover, .content:hover{
   border: 0px;
   margin:auto;
 }
-#ml{
+#ml, #add{
   display: flex;
   flex-flow: row wrap;
   align-content: center;
   align-items: center;
   text-align: center;
 }
-.content{
+.content, .ac{
   margin: 2% auto;
   padding: 1%;
 }
