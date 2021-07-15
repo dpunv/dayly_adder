@@ -1,8 +1,9 @@
 //author: dp
 
-//global variable to store the deleting state
+//global variables
 var del=0;
-
+var expo = 0;
+var liste = 0;
 
 //function to display the stored items in localStorage
 function st(){
@@ -11,8 +12,11 @@ function st(){
         var s="";
         for (let key in localStorage){
             if (!localStorage.hasOwnProperty(key)) continue;
-            s = s + "<p class=\"content\" onclick=\"dt('" + key + "')\">" + key + localStorage.getItem(key) +"</p>";
-            console.log(s)
+            if(liste==0){
+                s = s + "<p class=\"content\" onclick=\"dt('" + key + "')\">" + key + localStorage.getItem(key) +"</p>";
+            }else{
+                s = s + "<ul class=\"content\" onclick=\"dt('" + key + "')\"><li>" + key.split("<br />").join("</li><li>") + localStorage.getItem(key) +"</ul>";
+            }
         }
         document.getElementById("ml").innerHTML = s;
     } else {
@@ -58,9 +62,29 @@ function delact(){
     }
 }
 
+function listed(){
+    if(liste==0){
+        liste = 1;
+    }else{
+        liste = 0;
+    }
+    st()
+}
+
 //function to print the json object of localstorage
 function exp(){
-    document.getElementById("exp").innerHTML = JSON.stringify(localStorage);
+    if(expo == 0){
+        var o={};
+        for (let key in localStorage){
+            if (!localStorage.hasOwnProperty(key)) continue;
+            o[key.split("<br />").join("\n")] = localStorage.getItem(key);
+        }
+        document.getElementById("exp").innerHTML = JSON.stringify(o);
+        expo=1;
+    }else{
+        document.getElementById("exp").innerHTML = "";
+        expo=0;
+    }
 }
 
 //load the window

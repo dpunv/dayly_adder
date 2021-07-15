@@ -20,7 +20,7 @@ button, input, textarea, #exp, .content{
   margin: 1%;
   border-radius: 3px;
 }
-button, input, textarea, p{
+button, input, textarea, p, .content{
   transition-duration: 0.4s;
 }
 
@@ -46,4 +46,7 @@ button:hover, input:focus, imput:hover, .content:hover, textarea:focus, textarea
 .content, .ac{
   margin: 2% auto;
   padding: 1%;
+}
+ul, li{
+  text-align: left;
 }
