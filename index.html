@@ -13,18 +13,23 @@
         <div class="infra" id="add">
             <input class="ac" type="text" name="nm" id="name" placeholder="class">
             <textarea class="ac" type="text" name="tx" id="text" placeholder="content"></textarea>
+            <button class="ac" onclick="options()" id="opb">option</button>
+        </div>
+        <div class="infra" id="options">
+            <button class="ac" onclick="add()" id="ab">add</button>
+            <button class="ac" onclick="mod()" id="mb">modify</button>
+            <button onclick="delact()" id="delact">delete</button>
             <button class="ac" onclick="listed()" id="pb">list</button>
-            <button class="ac" onclick="add()" id="ab">Add</button>
-            <button class="ac" onclick="exp()">export</button>
+            <button class="ac" onclick="exp()">export list</button>
+            <button class="ac" onclick="options()" id="exb">exit</button>
         </div>
         <div class="infra" id="del">
-            <button onclick="da()" id="da">delete all</button>
-            <button onclick="delact()" id="delact">delete</button>
+            <button class="ac" onclick="da()" id="da">delete all</button>
+            <button class="ac" onclick="delact()" id="addbutt">add</button>
         </div>
         <p id="exp"></p>
         <div id="ml"></div>
     </div>
     <script src="script.js"></script>
-
 </body>
 </html>

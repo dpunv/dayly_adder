@@ -4,6 +4,8 @@
 var del=0;
 var expo = 0;
 var liste = 0;
+var modify = 0;
+var op = 0;
 
 //function to display the stored items in localStorage
 function st(){
@@ -32,10 +34,17 @@ function add(){
     st()
 }
 
-//function to delete an item from localstorage
+//function to modify or delete an item from localstorage
 function dt(key){
     if(del == 1){
         localStorage.removeItem(key);
+        st()
+    }else if(modify == 1){
+        document.getElementById("text").value = key.split("<br />").join("\n");
+        document.getElementById("name").value = localStorage.getItem(key);    
+        localStorage.removeItem(key);
+        modify = 0;
+        document.getElementById("mb").innerHTML = "modify"
         st()
     }
 }
@@ -50,23 +59,51 @@ function da(){
 function delact(){
     if(del == 0){
         del = 1;
-        document.getElementById("delact").innerHTML = "add";
-        document.getElementById("da").style.display = "block";
+        document.getElementById("del").style.display = "flex";
         document.getElementById("add").style.display = "none";
+        document.getElementById("options").style.display = "none";
     }
     else{
         del = 0
-        document.getElementById("delact").innerHTML = "delete";
-        document.getElementById("da").style.display = "none";
+        document.getElementById("del").style.display = "none";
         document.getElementById("add").style.display = "flex";
+        document.getElementById("options").style.display = "none";
     }
+    op = 0;
 }
 
+//function to change the state of the visualization
 function listed(){
     if(liste==0){
         liste = 1;
     }else{
         liste = 0;
+    }
+    st()
+}
+
+//function to change the state of the modification
+function mod(){
+    if(modify==0){
+        modify = 1;
+        document.getElementById("mb").innerHTML = "stop modify"
+    }else{
+        modify = 0;
+        document.getElementById("mb").innerHTML = "modify"
+    }
+    st()
+}
+
+//function to change the state of the options
+function options(){
+    if(op==0){
+        op = 1;
+        document.getElementById("add").style.display = "none";
+        document.getElementById("options").style.display = "flex";
+    }else{
+        op = 0;
+        document.getElementById("add").style.display = "flex";
+        document.getElementById("options").style.display = "none";
     }
     st()
 }

@@ -28,7 +28,7 @@ button:hover, input:focus, input:hover, .content:hover, textarea:focus, textarea
   background-color: white;
   color: #09031f;
 }
-#da{
+#options, #del{
   display: none;
   margin: 1% auto;
 }
@@ -49,4 +49,8 @@ button:hover, input:focus, input:hover, .content:hover, textarea:focus, textarea
 }
 ul, li{
   text-align: left;
+}
+#options, #del{
+  display: none;
+  flex-flow: row wrap;
 }
